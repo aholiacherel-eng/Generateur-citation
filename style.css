@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #333;
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+.conteneur-citation {
+    background: white;
+    max-width: 700px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.citation-texte {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.citation-texte p {
+    font-size: 28px;
+    line-height: 1.6;
+    color: #333;
+    font-style: italic;
+    position: relative;
+}
+
+/* Guillemets décoratifs */
+.citation-texte p::before {
+    content: '"';
+    font-size: 80px;
+    color: #667eea;
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    opacity: 0.3;
+    font-family: Georgia, serif;
+}
+
+.citation-texte p::after {
+    content: '"';
+    font-size: 80px;
+    color: #667eea;
+    position: absolute;
+    bottom: -60px;
+    right: -20px;
+    opacity: 0.3;
+    font-family: Georgia, serif;
+}
+
+.citation-auteur {
+    margin-bottom: 30px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.citation-auteur span {
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+}
+
+.citation-auteur span::before {
+    content: '— ';
+}
+
+.boutons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#nouvelle-citation {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+#nouvelle-citation:hover {
+    background: #5568d3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+#nouvelle-citation:active {
+    transform: translateY(0);
+}
+
+#btn-twitter {
+    background: #1DA1F2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
+}
+
+#btn-twitter:hover {
+    background: #1a8cd8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(29, 161, 242, 0.6);
+}
+
+#btn-twitter:active {
+    transform: translateY(0);
+}
+
+/* Animation de chargement */
+.chargement {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .conteneur-citation {
+        padding: 40px 30px;
+    }
+    
+    .citation-texte p {
+        font-size: 22px;
+    }
+    
+    .citation-texte p::before,
+    .citation-texte p::after {
+        font-size: 60px;
+    }
+    
+    .citation-auteur span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteneur-citation {
+        padding: 30px 20px;
+    }
+    
+    .citation-texte p {
+        font-size: 18px;
+    }
+    
+    .citation-texte p::before {
+        top: -20px;
+        left: -10px;
+        font-size: 50px;
+    }
+    
+    .citation-texte p::after {
+        bottom: -40px;
+        right: -10px;
+        font-size: 50px;
+    }
+    
+    #nouvelle-citation,
+    #btn-twitter {
+        width: 100%;
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+}
