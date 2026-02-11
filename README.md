@@ -62,110 +62,7 @@ Le projet utilise plusieurs APIs avec un système de secours :
                 → ❌ Échec → Message d'erreur
 ```
 
-## 💻 Code JavaScript expliqué
 
-### Structure principale
-
-```javascript
-// 1. Sélection des éléments HTML
-const texteElement = document.getElementById('texte');
-const auteurElement = document.getElementById('auteur');
-
-// 2. Configuration des APIs avec système de secours
-const APIS = [
-    { url: '...', texte: 'quote', auteur: 'author' },
-    { url: '...', texte: 'content', auteur: 'author' }
-];
-
-// 3. Fonction asynchrone pour récupérer les citations
-async function obtenirCitation() {
-    try {
-        // Appel à l'API
-        const reponse = await fetch(api.url);
-        const donnees = await reponse.json();
-        
-        // Affichage
-        texteElement.textContent = donnees[api.texte];
-    } catch (erreur) {
-        // Gestion des erreurs et rotation des APIs
-    }
-}
-```
-
-### Concepts JavaScript utilisés
-
-- ✅ `async/await` : Gestion asynchrone moderne
-- ✅ `fetch()` : Appels API
-- ✅ `try/catch/finally` : Gestion d'erreurs robuste
-- ✅ `classList` : Manipulation du DOM
-- ✅ Opérateur modulo `%` : Rotation circulaire des APIs
-
-## 🎨 Personnalisation
-
-### Modifier les couleurs
-
-Dans `style.css`, changez les variables :
-
-```css
-/* Couleur principale */
-#nouvelle-citation {
-    background: #667eea;  /* Changez cette couleur */
-}
-
-/* Couleur des guillemets */
-.citation-texte p::before {
-    color: #667eea;  /* Changez cette couleur */
-}
-```
-
-### Ajouter d'autres APIs
-
-Dans `script.js`, ajoutez une nouvelle API :
-
-```javascript
-const APIS = [
-    {
-        url: 'https://votre-api.com/random',
-        texte: 'nom_propriete_texte',
-        auteur: 'nom_propriete_auteur'
-    },
-    // ... autres APIs
-];
-```
-
-### Ajouter des citations locales de secours
-
-```javascript
-const citationsLocales = [
-    { texte: "Votre citation", auteur: "Auteur" },
-    { texte: "Une autre citation", auteur: "Autre auteur" }
-];
-```
-
-
-## 🐛 Gestion des erreurs
-
-Le système gère plusieurs types d'erreurs :
-
-| Erreur | Solution |
-|--------|----------|
-| **API indisponible** | Bascule vers l'API suivante |
-| **Timeout** | Message d'erreur + possibilité de réessayer |
-| **Pas de connexion** | Affiche un message explicatif |
-| **Toutes APIs down** | Message "Toutes les APIs sont indisponibles" |
-
-## 🔍 Débogage
-
-Ouvrez la **Console du navigateur** (F12) pour voir :
-
-```javascript
-// Messages de debug affichés
-🔍 Tentative avec DummyJSON...
-✅ Citation récupérée depuis DummyJSON
-// ou
-❌ DummyJSON a échoué: Error...
-🔍 Tentative avec Quotable...
-```
 
 ## 📦 Technologies utilisées
 
@@ -210,10 +107,5 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 ---
 
 **⭐ Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile !**
-
-
-
-
----
 
 **Bon coding ! 🚀**
